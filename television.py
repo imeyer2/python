@@ -35,9 +35,13 @@ class Television():
 
 
     def volume_up(self):
+        if self.__muted == True:
+            self.__muted = False
         self.__volume = (self.__volume + 1)%(Television.MAX_VOLUME+1)
 
     def volume_down(self):
+        if self.__muted == True:
+            self.__muted = False
         self.__volume = (self.__volume - 1)%(Television.MAX_VOLUME+1)
 
     def __str__(self):
